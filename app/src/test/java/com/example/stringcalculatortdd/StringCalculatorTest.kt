@@ -31,6 +31,13 @@ class StringCalculatorTest {
         assertEquals(10, calculator.add("1,2\n3,4"))
     }
 
+    @Test
+    fun `handles custom delimiters`() {
+        assertEquals(3, calculator.add("//;\n1;2"))
+        assertEquals(6, calculator.add("//#\n1#2#3"))
+    }
+
+
 
 
 }
