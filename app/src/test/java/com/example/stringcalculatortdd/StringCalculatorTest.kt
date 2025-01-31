@@ -19,4 +19,11 @@ class StringCalculatorTest {
         assertEquals(4, calculator.add("1,3"))
     }
 
+    @Test
+    fun `returns the sum of multiple numbers`() {
+        assertEquals(6, calculator.add("1,2,3"))
+        assertEquals(10, calculator.add("1,2,3,4"))
+    }
+
+
 }
