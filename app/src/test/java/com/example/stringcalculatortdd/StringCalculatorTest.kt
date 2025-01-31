@@ -10,4 +10,8 @@ class StringCalculatorTest {
     fun `returns 0 for an empty string`() {
         assertEquals(0, calculator.add(""))
     }
+    @Test
+    fun `returns the number itself when only one number is passed`() {
+        assertEquals(2, calculator.add("2"))
+    }
 }
