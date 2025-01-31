@@ -1,6 +1,7 @@
 package com.example.stringcalculatortdd
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertThrows
 import org.junit.Test
 
 class StringCalculatorTest {
@@ -36,6 +37,14 @@ class StringCalculatorTest {
         assertEquals(3, calculator.add("//;\n1;2"))
         assertEquals(6, calculator.add("//#\n1#2#3"))
     }
+    @Test
+    fun `throws exception for negative numbers`() {
+        val exception = assertThrows(IllegalArgumentException::class.java) {
+            calculator.add("1,-2,3")
+        }
+        assertEquals("negatives not allowed: -2", exception.message)
+    }
+
 
 
 
